@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'kia/cli'
+Kia::CLI.start
