@@ -1,3 +1,4 @@
+require 'debugger'
 require "thor/group"
 
 module Kia
@@ -12,8 +13,8 @@ module Kia
       end
 
       def copy_template
-        if File.directory?("_posts")
-          template "new_post.md", "_posts/#{name}.md"
+        if File.exist?("config.rb")
+          template "new_post.md", "posts/#{name}.html.md"
         else
           puts "Hold on mate, you'll need to initialize a Kia project (kia init NAME) to be able to make posts."
         end
