@@ -15,12 +15,29 @@ module Kia
 
     desc "kia post NAME", "Create a new post"
     def post(name)
-      Kia::Commands::Post.start([name])
+      if File.exist?("config.ru")
+        Kia::Commands::Post.start([name])
+      else
+        puts "Hold on mate, you'll need to initialize a Kia project (kia init NAME) to be able to make posts."
+      end
     end
 
     desc "kia build", "Generate a static site"
     def build
-      Kia::Commands::Build.start
+      if File.exist?("config.ru")
+        Kia::Commands::Build.start
+      else
+        puts "Hold on mate, you'll need to initialize a Kia project (kia init NAME) to be able to make posts."
+      end
+    end
+
+    desc "kia serve", "Serve a static site"
+    def build
+      if File.exist?("config.ru")
+        Kia::Commands::Serve.start
+      else
+        puts "Hold on mate, you'll need to initialize a Kia project (kia init NAME) to be able to make posts."
+      end
     end
   end
 end

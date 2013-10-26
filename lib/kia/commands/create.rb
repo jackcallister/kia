@@ -7,12 +7,12 @@ module Kia
 
       argument :name, type: :string
 
-      def create_site
-        FileUtils.cp_r Kia::Commands::Create.site_template, "./#{name}"
+      def self.template_path
+        File.expand_path "../../../templates/site", File.dirname(__FILE__)
       end
 
-      def self.site_template
-        File.expand_path "../../../templates/site", File.dirname(__FILE__)
+      def create_site
+        FileUtils.cp_r Kia::Commands::Create.template_path, "./#{name}"
       end
     end
   end

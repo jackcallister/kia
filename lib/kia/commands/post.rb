@@ -1,4 +1,3 @@
-require 'debugger'
 require "thor/group"
 
 module Kia
@@ -9,15 +8,11 @@ module Kia
       argument :name, type: :string
 
       def self.source_root
-        File.expand_path "../../../templates/", File.dirname(__FILE__)
+        File.expand_path "../../../templates/files/", File.dirname(__FILE__)
       end
 
       def copy_template
-        if File.exist?("config.rb")
-          template "new_post.md", "posts/#{name}.html.md"
-        else
-          puts "Hold on mate, you'll need to initialize a Kia project (kia init NAME) to be able to make posts."
-        end
+        template "post.html.md", "source/posts/#{name}.html.md"
       end
     end
   end

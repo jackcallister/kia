@@ -3,6 +3,6 @@ Feature: Creating a new project
   I want an easy to use CLI
 
   Scenario: With a name argument
-    When I run "kia create test"
+    When I run `kia create test`
     Then a directory named "test" should exist
-    Then a file named "test/index.html.erb" should exist
+    Then a file named "test/source/index.html.erb" should exist

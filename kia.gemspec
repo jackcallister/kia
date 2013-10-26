@@ -19,11 +19,12 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "thor"
-  spec.add_dependency "stasis"
-  spec.add_dependency "redcarpet"
+  spec.add_dependency "rack"
+  spec.add_dependency "tilt"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "cucumber"
   spec.add_development_dependency "aruba"
+  spec.add_development_dependency "debugger"
 end
