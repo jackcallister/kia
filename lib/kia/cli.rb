@@ -33,7 +33,7 @@ module Kia
     end
 
     desc "kia serve", "Serve a static site"
-    def build
+    def server
       if File.exist?("config.ru")
         Kia::Commands::Serve.start
       else
