@@ -3,6 +3,7 @@ require 'kia'
 require 'kia/commands/create'
 require 'kia/commands/post'
 require 'kia/commands/build'
+require 'kia/commands/serve'
 
 module Kia
   class CLI < Thor
